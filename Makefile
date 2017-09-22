@@ -11,6 +11,7 @@
 # **************************************************************************** #
 
 NAME = libft.a
+FLAGS = -Wall -Wextra -Werror
 SRC = ft_memset.c\
 		ft_bzero.c\
 		ft_memcpy.c\
@@ -39,7 +40,6 @@ SRC = ft_memset.c\
 		ft_isprint.c\
 		ft_toupper.c\
 		ft_tolower.c\
-		\
 		ft_memalloc.c\
 		ft_memdel.c\
 		ft_strnew.c\
@@ -64,7 +64,6 @@ SRC = ft_memset.c\
 		ft_putstr_fd.c\
 		ft_putendl_fd.c\
 		ft_putnbr_fd.c\
-		\
 		ft_lstnew.c\
 		ft_lstdelone.c\
 		ft_lstdel.c\
@@ -72,18 +71,17 @@ SRC = ft_memset.c\
 		ft_lstiter.c\
 		ft_lstmap.c
 
-all:
-	gcc -Wall -Wextra -Werror $(SRC) main.c
+all: $(NAME)
 		
 $(NAME):
-	gcc -Wall -Wextra -Werror -c $(SRC)
-	ar rc libft.a ft_*.o
-	rm *.o
+	gcc  $(FLAGS) -c $(SRC)
+	ar rc $(NAME) $(SRC:.c=.o)
+	ranlib $(NAME)
 
 clean:
-	rm -f ft_*.o
+	rm -f $(SRC:.c=.o)
 
 fclean: clean
 	rm -f $(NAME)
 
-re: fclean $(NAME)
+re: fclean all

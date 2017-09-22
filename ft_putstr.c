@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iprokofy <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: iprokofy <iprokofy@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/20 16:41:55 by iprokofy          #+#    #+#             */
 /*   Updated: 2017/09/20 16:41:57 by iprokofy         ###   ########.fr       */

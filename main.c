@@ -333,7 +333,7 @@ int		main()
 	printf("%s\n", ft_itoa(-3075682));
 
 	printf("----- ft_putchar -----\n");
-	ft_putchar('r');
+	ft_putchar(L'ø');
 	printf("\n");
 
 	printf("----- ft_putstr -----\n");
@@ -354,7 +354,7 @@ int		main()
 	printf("\n");
 
 	printf("----- ft_putstr_fd -----\n");
-	ft_putstr_fd("new line with printf", 1);
+	ft_putstr_fd("привет", 1);
 	printf("\n");
 
 	printf("----- ft_putendl_fd -----\n");
