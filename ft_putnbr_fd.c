@@ -20,13 +20,14 @@ void	ft_putnbr_fd(int n, int fd)
 	if (u_nb == 0)
 	{
 		ft_putchar_fd('0', fd);
+		return ;
 	}
 	if (n < 0)
 	{
 		u_nb = -u_nb;
 		ft_putchar_fd('-', fd);
 	}
-	if (u_nb > 10)
+	if (u_nb >= 10)
 	{
 		ft_putnbr_fd(u_nb / 10, fd);
 		ft_putchar_fd(u_nb % 10 + '0', fd);

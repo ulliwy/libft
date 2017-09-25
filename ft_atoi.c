@@ -53,7 +53,7 @@ int			ft_atoi(const char *str)
 		sign = -1;
 		str++;
 	}
-	if (*str == '+')
+	if (*str == '+' && sign != -1)
 	{
 		sign = 1;
 		str++;

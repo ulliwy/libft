@@ -15,6 +15,11 @@
 #include <ctype.h>
 #include <fcntl.h>
 
+void			uf_striter_callback(char *s)
+{
+	*s = *s + 1;
+}
+
 void	test_putchar(char *c)
 {
 	write(1, c, 1);
@@ -204,8 +209,9 @@ int		main()
 	printf("%s\n", ft_strchr(mch12, 'i'));
 
 	printf("----- ft_strrchr -----\n");
-	printf("%s\n", strrchr(mch1, 's'));
-	printf("%s\n", ft_strrchr(mch12, 's'));
+	char st1[] = "abc";
+	printf("%s\n", strrchr(st1, 'a'));
+	printf("%s\n", ft_strrchr(st1, 'a'));
 
 	printf("----- ft_strstr -----\n");
 	char s1[] = "abcabcadabcaddabd";
@@ -222,12 +228,12 @@ int		main()
 	printf("%d\n", ft_strcmp(s1, s2));
 
 	printf("----- ft_strncmp -----\n");
-	printf("%d\n", strncmp(s1, s2, 5));
-	printf("%d\n", ft_strncmp(s1, s2, 5));
+	printf("%d\n", strncmp("abc", "abc\0defg", 100));
+	printf("%d\n", ft_strncmp("abc", "abc\0defg", 100));
 
 	printf("----- ft_atoi -----\n");
-	printf("%d\n", atoi("-99999999999999999999999999"));
-	printf("%d\n", ft_atoi("-99999999999999999999999999"));
+	printf("%d\n", atoi("-+1"));
+	printf("%d\n", ft_atoi("-+1"));
 
 	printf("----- ft_isalpha -----\n");
 	printf("%d\n", isalpha('Z'));
@@ -284,12 +290,16 @@ int		main()
 	printf("%s\n", c);
 
 	printf("----- ft_striter -----\n");
-	char *d = "abc\0";
-	ft_striter(d, &test_putchar);
+	char stri[] = "Hello";
+
+	ft_striter(NULL, NULL);
+	ft_striter(stri, NULL);
+	//ft_striter(stri, uf_striter_callback);
+	//ft_striter(d, &test_putchar);
 	printf("\n");
 
 	printf("----- ft_striteri -----\n");
-	ft_striteri(d, &test_putchar2);
+	//ft_striteri(d, &test_putchar2);
 
 	printf("----- ft_strmap -----\n");
 	char *map = ft_strmap("abc", &test_toupper);
@@ -333,7 +343,7 @@ int		main()
 	printf("%s\n", ft_itoa(-3075682));
 
 	printf("----- ft_putchar -----\n");
-	ft_putchar(L'ø');
+	ft_putchar('r');
 	printf("\n");
 
 	printf("----- ft_putstr -----\n");
@@ -354,13 +364,29 @@ int		main()
 	printf("\n");
 
 	printf("----- ft_putstr_fd -----\n");
-	ft_putstr_fd("привет", 1);
+	ft_putstr_fd("new line with printf", 1);
 	printf("\n");
 
 	printf("----- ft_putendl_fd -----\n");
 	ft_putendl_fd("no new line with printf", 1);
 
 	printf("----- ft_putnbr_fd -----\n");
+	ft_putnbr_fd(0, 1);
+	printf("\n");
+	ft_putnbr_fd(1, 1);
+	printf("\n");
+	ft_putnbr_fd(-1, 1);
+	printf("\n");
+	ft_putnbr_fd(56, 1);
+	printf("\n");
+	ft_putnbr_fd(-1230, 1);
+	printf("\n");
+	ft_putnbr_fd(10203, 1);
+	printf("\n");
+	ft_putnbr_fd(2147483647, 1);
+	printf("\n");
+	ft_putnbr_fd(-2147483648, 1);
+	printf("\n");
 	ft_putnbr_fd(2147483647, 1);
 	printf("\n\n");
 
