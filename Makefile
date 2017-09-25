@@ -69,7 +69,10 @@ SRC = ft_memset.c\
 		ft_lstdel.c\
 		ft_lstadd.c\
 		ft_lstiter.c\
-		ft_lstmap.c
+		ft_lstmap.c\
+		ft_isspace.c\
+		ft_lstback.c\
+		ft_strrev.c
 
 all: $(NAME)
 		

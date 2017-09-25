@@ -19,9 +19,7 @@ static char	*ft_reverse(char *str)
 	char temp;
 
 	if (!str || *str == 0)
-	{
 		return (str);
-	}
 	left = str;
 	right = left + ft_strlen(str) - 1;
 	while (left < right)

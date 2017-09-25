@@ -14,6 +14,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <fcntl.h>
+#include <math.h>
 
 void			uf_striter_callback(char *s)
 {
@@ -430,5 +431,28 @@ int		main()
 	printf("----- ft_lstmap -----\n");
 	t_list *list6 = ft_lstmap(list3, &list_to_app);
 	print_list(list6);
+
+	printf("<<<<<<<<<<<<>>>>>>>>>>>>\n");
+	printf("<<<<<<<< EXTRA >>>>>>>>>\n");
+	printf("<<<<<<<<<<<<>>>>>>>>>>>>\n\n");
+
+	printf("----- ft_lstback -----\n");
+	t_list	*list7 = NULL;
+	ft_lstback(&list7, ft_lstnew("soon", ft_strlen("soon") + 1));
+	printf("--\n");
+	print_list(list7);
+
+	printf("----- ft_isspace -----\n");
+	printf("%d\n", ft_isspace(' '));
+
+	printf("----- ft_strrev -----\n");
+	char k1[] = "1234";
+	char k2[] = "a";
+	char k3[] = "123";
+	char k4[] = "";
+	printf("%s\n", k1);
+	printf("%s\n", k2);
+	printf("%s\n", k3);
+	printf("%s\n", k4);
 }
 
