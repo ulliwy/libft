@@ -233,8 +233,8 @@ int		main()
 	printf("%d\n", ft_strncmp("abc", "abc\0defg", 100));
 
 	printf("----- ft_atoi -----\n");
-	printf("%d\n", atoi("-+1"));
-	printf("%d\n", ft_atoi("-+1"));
+	printf("%d\n", atoi("99999999999999"));
+	printf("%d\n", ft_atoi("99999999999999"));
 
 	printf("----- ft_isalpha -----\n");
 	printf("%d\n", isalpha('Z'));
@@ -439,6 +439,8 @@ int		main()
 	printf("----- ft_lstback -----\n");
 	t_list	*list7 = NULL;
 	ft_lstback(&list7, ft_lstnew("soon", ft_strlen("soon") + 1));
+	ft_lstback(&list7, ft_lstnew("soon", ft_strlen("soon") + 1));
+	ft_lstback(&list7, ft_lstnew("soon", ft_strlen("soon") + 1));
 	printf("--\n");
 	print_list(list7);
 
@@ -454,5 +456,8 @@ int		main()
 	printf("%s\n", k2);
 	printf("%s\n", k3);
 	printf("%s\n", k4);
+
+	printf("----- ft_lstsize -----\n");
+	printf("Size: %d\n", ft_lstsize(list7));
 }
 

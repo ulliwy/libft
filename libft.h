@@ -86,5 +86,6 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int					ft_isspace(char c);
 void				ft_lstback(t_list **alst, t_list *new);
 char				*ft_strrev(char *str);
+int					ft_lstsize(t_list *lst);
 
 #endif
